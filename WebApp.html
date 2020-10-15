@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+  function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+      document.getElementById("msg").innerHTML = "First Name cannot be empty".fontcolor("red");
+      return false;
+    }
+    var y = document.forms["myForm"]["lname"].value;
+    if (y == "") {
+      document.getElementById("msg").innerHTML = "Last Name cannot be empty".fontcolor("red");
+      return false;
+    }
+    var z = document.forms["myForm"]["email"].value;
+    if (z == "") {
+      document.getElementById("msg").innerHTML = "Email Address cannot be empty".fontcolor("red");
+      return false;
+    }
+    var w = document.forms["myForm"]["notes"].value;
+    if (w == "") {
+      document.getElementById("msg").innerHTML = "Notes cannot be empty".fontcolor("red");
+      return false;
+    }
+    document.getElementById("msg").innerHTML = "Validation successful".fontcolor("green");
+    return false;
+  }
+</script>
+
+<style>
+  .center {
+    margin: auto;
+    width: 30%;
+    border: 5px solid blue;
+    padding: 30px 60px;
+    border-radius: 25px;
+    background: #ffe9cf;
+  }
+
+  label { display: inline-block; width: 110px; text-align: right; color: blue; font-family: Arial, Helvetica, sans-serif; }
+
+  p { font-family: Arial, Helvetica, sans-serif; }
+
+  .button { background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 17px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .formfield * {
+    vertical-align: top;
+  }
+</style>
+
+</head>
+
+<body>
+
+<br><br><br><br>
+
+<div class="center">
+  <form name="myForm" onsubmit="return validateForm()" method="post"><br><br>
+    <label for="fname">First Name </label>
+    <input type="text" id="fname" name="fname" placeholder="First Name"/><br><br>
+
+    <label for="lname">Last Name </label>
+    <input type="text" id="lname" name="lname" placeholder="Last Name"/><br><br>
+
+    <label for="email">Email Address</label>
+    <input type="text" id="email" name="email" placeholder="Email Address"/><br><br>
+
+    <p class="formfield">
+      <label for="notes">Notes </label>
+      <textarea id="notes" name="notes" rows="4" cols="20"></textarea> 
+    </p>
+
+    <label for="register"></label>
+    <input type="submit" class="button" id="register" value="Register">
+
+    <p id="msg"></p>
+  </form>
+</div>
+</body>
+</html>
+
